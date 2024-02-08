@@ -1,0 +1,43 @@
+{
+    "manifest_version": 2,
+    "name": "YouTube LLM Interactor",
+    "version": "1.0",
+    "description": "Interact with YouTube videos using a language model API.",
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "https://generativelanguage.googleapis.com/",
+        "https://api.openai.com/",
+        "https://us-east4-aiplatform.googleapis.com/"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.youtube.com/watch*"],
+            "js": ["content.js"]
+        }
+    ],
+    "commands": {
+        "activate": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Y"
+            },
+            "description": "Activate the extension"
+        }
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    }
+}

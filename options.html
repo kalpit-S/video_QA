@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+      }
+      button {
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Extension Options</h1>
+      <label>
+        Default LLM Model:
+        <select id="llmModel">
+          <option value="gemini pro" selected>Gemini Pro</option>
+          <option value="gemini ultra">Gemini Ultra</option>
+          <option value="gpt 3.5">GPT-3.5 Turbo</option>
+          <option value="gpt 4">GPT-4 Turbo</option>
+        </select>
+      </label>
+      <label>
+        Gemini API Key:
+        <input id="geminiApiKey" type="text" />
+      </label>
+      <label>
+        OpenAI API Key:
+        <input id="openaiApiKey" type="text" />
+      </label>
+      <h2>Advanced Options</h2>
+      <section id="advancedOptions">
+        <label>
+          Maximum Context Length (in characters):
+          <input id="maxContextLength" type="number" />
+          <small
+            >This is the maximum number of characters from the context that the
+            model considers when generating a response.</small
+          >
+        </label>
+        <label>
+          Number of Most Relevant Sections to Consider:
+          <input id="numResults" type="number" />
+          <small
+            >This is the number of sections that the model considers to be the
+            most relevant when generating a response.</small
+          >
+        </label>
+        <label>
+          Chunk Size for Summarization (in characters):
+          <input id="chunkSize" type="number" />
+          <small
+            >This is the number of characters each chunk has when generating
+            embeddings</small
+          >
+        </label>
+      </section>
+      <button id="saveButton">Save</button>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>
